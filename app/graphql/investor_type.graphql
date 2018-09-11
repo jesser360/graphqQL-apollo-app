@@ -1,0 +1,11 @@
+class InvestorType < GraphQL::Schema::Object
+  description "Investor instance"
+  field :id, ID, null: false
+  field :company, String, null: false
+  # fields should be queried in camel-case (this will be `truncatedPreview`)
+  field :location, String, null: false
+  # Fields can return lists of other objects:
+  field :investments, [InvestmentType], null: true,
+    # And fields can have their own descriptions:
+    description: "This Investor's investments, or null if they dont have any."
+end

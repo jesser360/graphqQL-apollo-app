@@ -1,0 +1,6 @@
+class InvestmentType < GraphQL::Schema::Object
+  field :id, ID, null: false
+  field :amount, Int, null: false
+  field :stage, String, null: false
+  field :investor, InvestorType, null: false
+end
